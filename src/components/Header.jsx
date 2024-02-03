@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import DarkModeToggle from "../ui/DarkModeToggle";
+import { formattedDate } from "../constants/getCurrentDate";
 
 const StyledHeader = styled.header`
   position: sticky;
@@ -8,12 +9,12 @@ const StyledHeader = styled.header`
   right: 0;
   width: 100%;
   height: 65px;
+  padding-right: 2px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   color: var(--color-grey-700);
   background-color: var(--color-grey-0);
-  border-bottom: 2px solid var(--color-grey-500);
 `;
 
 const Container = styled.div`
@@ -31,14 +32,17 @@ const StyledHeaderText = styled.div`
   font-size: larger;
 `;
 
-const currentDate = new Date().toJSON().slice(0, 10);
+const StyledSubText = styled.div`
+  font-size: 12px;
+  margin-left: 8px;
+`;
 
 const Header = () => {
   return (
     <StyledHeader>
       <Container>
         <StyledHeaderText>The Archives</StyledHeaderText>
-        <div>{currentDate} ● 3 Stories</div>
+        <StyledSubText>{formattedDate} ● 3 Stories</StyledSubText>
       </Container>
       <DarkModeToggle />
     </StyledHeader>

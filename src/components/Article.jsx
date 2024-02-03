@@ -1,7 +1,9 @@
 import styled from "styled-components";
 import ArticleItem from "../ui/ArticleItem";
+import Header from "./Header";
+import Divider from "./Divider";
 
-const StyledSection = styled.section`
+const StyledMain = styled.main`
   width: 100%;
   height: 100%;
   display: flex;
@@ -10,12 +12,14 @@ const StyledSection = styled.section`
   justify-content: start;
 `;
 
-const Body = () => {
+const Articles = () => {
   return (
-    <StyledSection>
+    <StyledMain>
+      <Header />
+      <Divider />
       <ArticleItem />
-    </StyledSection>
+    </StyledMain>
   );
 };
 
-export default Body;
+export default Articles;
